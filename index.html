@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RESUME</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d95be291-645a-40cd-be78-a2563c778f33" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌻</span></div><h1 class="page-title">RESUME</h1></header><div class="page-body"><div id="99751a32-fe75-4e08-903a-98e408533f3b" class="column-list"><div id="e0fb56b0-0a02-4f1b-b524-e5921a723813" style="width:81.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="00bbf85f-14f6-49b8-82a2-a0d62426ec51"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">무엇이든 새로운 것을 배울 때마다 설레하는 
+자바 스프링 새싹 개발자 하지혜입니다. 
+
+<strong><mark class="highlight-yellow">- BufferedImage를 통한 이미지 압축 
+- KakaoAPI을 사용하여 소셜로그인 구현
+- JPA @Query와 fetch join을 통한 N+1 문제 해결 
+- ApplicationPublisher와 @Async를 사용한 비동기 처리 </mark></strong>
+</div></figure></div><div id="7de62ea0-c3af-409c-81d9-0a335e1850c3" style="width:18.75%" class="column"><figure id="d78da0f2-393e-47de-90e8-4d6be8e3db17" class="image"><a href="RESUME%20d95be291645a40cdbe78a2563c778f33/4r.jpg"><img style="width:1200px" src="RESUME%20d95be291645a40cdbe78a2563c778f33/4r.jpg"/></a></figure><p id="ab166e0e-6f52-4e23-95e4-c2f676ebac7d" class="">
+</p></div></div><div id="d0573eae-6b64-4869-ac1c-f01a20c7b273" class="column-list"><div id="a23cb24a-ef2c-4389-a5af-304134eebe4b" style="width:56.25%" class="column"><h2 id="f266f8e8-d0c2-4973-bfeb-e4b598d5f4f8" class="">하지혜</h2><hr id="c6e1b67c-204c-487b-9625-0943a4484d52"/><p id="a7c7017a-8864-4962-9c82-5e69ce6c8b1d" class="">🔠이메일 : hajh5447@naver.com</p><p id="c5797b2e-653e-436c-8bc2-170f5441c8f0" class="">#️⃣연락처 : 010-2882-5447</p><p id="70eba319-e87e-445f-bdc7-d8bb70b19f61" class="">🐈‍⬛깃허브 : <a href="https://github.com/AnnieHa1002">https://github.com/AnnieHa1002</a></p><p id="3f2744be-9076-41e8-8504-4b42f46d07f6" class="">👾블로그 : <a href="https://medium.com/@annieha1002">https://medium.com/@annieha1002</a></p><p id="14b5449b-b48f-443f-a499-1138fd65b4e9" class="">
+</p><p id="f65cd7ec-3c7f-46d1-b5ad-de1134e0f87f" class="">
+</p></div><div id="23b5934c-874b-49cd-ad98-3fe9cd00bae0" style="width:43.74999999999999%" class="column"><h2 id="7eb1f3bc-b8be-4eb6-8b7d-7e173c28ae70" class="">스킬</h2><hr id="6752822d-c67a-49ac-95c8-650e46a06178"/><p id="9fe7992b-1c3e-4d88-8841-7c63a077d641" class=""><strong><strong>Backend</strong></strong></p><ul id="fade7d3b-221e-4d9c-b176-0fbe3f799adb" class="bulleted-list"><li style="list-style-type:disc">Java , Spring, AWS, SSE</li></ul><ul id="a72adf25-cb03-4f36-98a7-078a4e4ce789" class="bulleted-list"><li style="list-style-type:disc">MYSQL, S3, Gradle</li></ul><p id="a21d08c5-84f7-47d2-9bc3-432293055e93" class="">
+</p><p id="39ef9f0c-9f1a-4e58-8070-30275ec5e225" class="">
+</p></div></div><h2 id="29d4a5d2-9037-4b95-9316-01227aabd5e8" class="">이력</h2><hr id="925a944c-3b04-4fba-a835-278b0c03a40d"/><div id="ea5333e1-46de-4b4d-9f85-896d54079b32" class="column-list"><div id="54309a22-e0dd-480f-90bd-bfec02d2a29f" style="width:56.25%" class="column"><p id="81cf8e94-1084-49c2-9ee2-3b233d187fa8" class=""><strong>22.07.11 - 22.10.14 </strong></p><p id="72bf4b8d-be91-4ac6-be65-6a8e29c5e4f7" class="">
+</p><p id="17f59865-5f43-4534-bef2-e9394f8b29fc" class="">
+</p><p id="f455bf05-ec66-43f8-a6c7-11695f980c7d" class="">
+</p></div><div id="e0d53358-2e76-4ca9-ba32-9f670fafd307" style="width:81.25%" class="column"><p id="23f7f838-7e10-436c-97b0-166de8356005" class="">스파르타 항해99 부트캠프 8기 수료  </p><ul id="591088a1-faf2-4d2a-b1d9-dadb5ec9ba21" class="bulleted-list"><li style="list-style-type:disc">CS study  진행 </li></ul><ul id="00c15619-096c-45d6-b06f-fe89d9747590" class="bulleted-list"><li style="list-style-type:disc">항해톡 “JPA” 발표</li></ul><ul id="08ac17a6-4c0a-436c-ba8e-29cb16fbc0d2" class="bulleted-list"><li style="list-style-type:disc">협업 프로젝트 진행</li></ul></div></div><p id="d5e83f18-39e5-42a5-9bfe-ab1fe1fd4386" class="">
+</p><h2 id="dae8203b-f0c4-4c5d-a65f-286d71ddf1e2" class="">프로젝트 </h2><hr id="4c27d0c6-a1a1-4f65-89ec-f13256f46dcd"/><div id="2830f089-b33b-4ba7-b38c-1b7ee1ba40b7" class="column-list"><div id="6a8ff3af-d7f7-4a08-9cf2-c9e39dcbc91c" style="width:50%" class="column"><h3 id="4b2b88f4-0189-4428-a2c6-258d267cfcb4" class=""><strong>Green Step </strong></h3><p id="3e7a9b92-f08e-42b5-80e2-553bce5f1a5f" class=""><strong>(환경 미션 투두 리스트 서비스)                              </strong></p><figure id="08b1552d-af62-471c-8839-20677c1db055" class="link-to-page"><a href="https://www.notion.so/08b1552daf62471c883920677c1db055"><span class="icon">🌻</span>자소서</a></figure><figure id="1061b2b8-aa61-419a-805e-7775db7a5188" class="link-to-page"><a href="https://www.notion.so/GreenStep-1061b2b8aa61419a805e7775db7a5188"><span class="icon">🌏</span>GreenStep</a></figure><p id="1905ad30-5726-4d84-b74d-d6e9410e0080" class="">
+</p><p id="2439d2dd-09d8-42d1-acc5-530c666ba723" class=""><strong>2022.08, 6주</strong></p><p id="54eaab72-3d68-45cd-83f9-32d78759da77" class="">
+</p><p id="c1c5de5b-62cf-45db-ae84-c1ba36823907" class="">
+</p><p id="b6df1c19-29ef-40a0-88bd-e9c8b05a2e13" class="">🌱 노션 주소 : 
+<a href="https://www.notion.so/GREEN-STEP-5b69f875232f4827ab76d15e445279d3">https://www.notion.so/GREEN-STEP-5b69f875232f4827ab76d15e445279d3</a> </p><p id="9ba88122-8237-4c05-b183-d2bb98ff4179" class="">
+</p></div><div id="8b17901a-29f0-4b78-ba6d-e271e12f29c8" style="width:81.25%" class="column"><p id="7d0de5a5-c99b-4686-9859-25c09ab98310" class="">
+</p><p id="50aca676-7c8a-40d8-adde-db2609d11793" class=""><strong>기술 : Java, Spring Boot, MySql, S3 Bucket, Cloud Front, SMTP, Kakao API, Envers</strong></p><p id="0e8bc9be-da2b-4ada-9a49-c6b89f8522d5" class=""><div class="indented"><ul id="02e28c33-0c89-45d0-aad7-28f2f13f32d8" class="bulleted-list"><li style="list-style-type:disc">이미지 업로드 및 리사이징 기능 개발<ul id="f3999df5-4737-4a7c-bdd0-67c95c8a41b6" class="bulleted-list"><li style="list-style-type:circle">BASE64 이미지로 변환 및 
+S3 즉시 업로드 기능 구현</li></ul><ul id="772b6710-6c97-455c-bc21-0a912868161d" class="bulleted-list"><li style="list-style-type:circle">기존 이미지 크기를<strong> 30-60% 압축 </strong></li></ul></li></ul><ul id="e1c1c397-0fe0-43a9-bd0e-c973362023ae" class="bulleted-list"><li style="list-style-type:disc">S3의 백업 플랜을 통한 백업 처리 </li></ul><ul id="fa9fabba-c103-45ca-b66e-52c0b356d197" class="bulleted-list"><li style="list-style-type:disc">CloudFront를 통한 사진 캐싱 처리 </li></ul><ul id="f3b9c746-e5da-4ff8-be58-aaf8e607e69a" class="bulleted-list"><li style="list-style-type:disc">SMTP을 통한 이메일 기능 구현</li></ul><ul id="c0bb9daf-512f-40e9-bbe0-a4751490381e" class="bulleted-list"><li style="list-style-type:disc">Application Publisher와 @Async를 통한 
+이메일 이벤트 비동기 처리 <ul id="a00286fc-01b3-46bb-81cd-50de09f82402" class="bulleted-list"><li style="list-style-type:circle"><strong>4.6초 에서 약 0.8초로 실행 시간 감소</strong> 
+(반올림 한 값)</li></ul></li></ul><ul id="0661deb7-dd42-4d91-9840-c80bf610061d" class="bulleted-list"><li style="list-style-type:disc">Scheduler을 사용하여 거절된 사진 
+버킷에서 삭제하는 로직 개발</li></ul><ul id="7fd2917a-e974-4cdc-bbdb-d0acaf3372f1" class="bulleted-list"><li style="list-style-type:disc">카카오API 를 통한 소셜 로그인 기능 구현<ul id="377bfce6-8a9b-496a-89ba-0b75545ba439" class="bulleted-list"><li style="list-style-type:circle">카카오API는 레퍼런스가 적어 
+비슷한 사례를 참고하여 
+HTTP통신에 대한 개념을 익힘</li></ul></li></ul><ul id="170fbf6a-ee5a-44c4-a30d-8a8de6de943a" class="bulleted-list"><li style="list-style-type:disc">Envers를 이용하여 History Table 생성 로직 구현</li></ul></div></p></div></div><hr id="920495ec-7d04-46a6-8af8-10f9d102348c"/><div id="5080f793-0ade-4f12-ac29-f7fbb680d4d2" class="column-list"><div id="dcffecdf-ad93-4e8b-afd0-10687d022456" style="width:56.25%" class="column"><h3 id="0687a789-d464-40d0-8809-ac9217b155ed" class=""><strong>인스타그램 클론코딩 </strong></h3><figure id="05d85385-333b-44b7-9776-2481ff786273" class="link-to-page"><a href="https://www.notion.so/05d85385333b44b797762481ff786273"><span class="icon">🌺</span>인스타그램 클론</a></figure><p id="6cee6ffc-5e78-4ba1-aff8-f4c54820ad3c" class="">
+</p><p id="1a99f95b-d2ba-4139-bfc5-b012fde8780a" class=""><strong>2022.08, 1주</strong></p><p id="89721667-06ea-4432-ad0a-27b066bc8ede" class="">
+</p></div><div id="bbfcb486-1be3-49f3-91a8-c2a0737496ce" style="width:87.5%" class="column"><p id="a68b4b74-9926-4be6-b5b6-9d8b2dbe35df" class="">
+</p><p id="5d2cb325-37d3-499a-8f19-11578b6c0d06" class=""><strong>기술 : Java, Spring, MySql, AWS EC2, JWT</strong></p><p id="aba1aa67-2f4f-4dab-a341-d0799c91b566" class=""><div class="indented"><ul id="9fedbdb0-7e22-40f2-8a52-992128d62dfc" class="bulleted-list"><li style="list-style-type:disc">이메일과 전화번호를 동시에 로그인 ID로 
+쓸 수 있도록 하는 유효성 검사 로직 개발</li></ul><ul id="af1b2dfc-9070-4758-b7b5-125d93d8ebd7" class="bulleted-list"><li style="list-style-type:disc">Refresh토큰의 역할을 이해하고 
+엑세스 토큰을 재발급 하는 로직 구현</li></ul></div></p></div></div><hr id="b4243bd5-61a4-47a7-8dd8-c6832d3577b3"/><div id="869da459-7909-484d-9c79-085580b3d33c" class="column-list"><div id="83738198-4e20-46e0-bdec-fb2247798dcb" style="width:56.25%" class="column"><h3 id="31786ee9-3c6f-4d80-b3db-c16dc4afb156" class=""><strong>욜로GO </strong></h3><p id="3871a102-1732-4c28-85c9-1601a538a4d5" class=""><strong>(나이대 별 여행 후기 서비스)                                                  </strong></p><figure id="cd17bacb-edc5-457d-acdf-bc0499d57ea9" class="link-to-page"><a href="https://www.notion.so/GO-cd17bacbedc5457dacdfbc0499d57ea9"><span class="icon">🏖️</span>욜로GO</a></figure><p id="bc860c56-cc62-42b6-95d3-8402b3d17314" class="">
+</p><p id="bb371b1a-aa55-4acb-b120-b4233a70346e" class=""><strong>2022.08, 1주</strong></p><p id="39d72c21-262e-4932-a59d-7b143199709f" class="">
+</p></div><div id="53774bda-7a86-48af-89d5-ff3779d3e0bc" style="width:87.5%" class="column"><p id="0d141622-5e87-406a-9883-da63182564ce" class="">
+</p><p id="4a0338db-1c1d-4937-8180-c59ac2f19e78" class=""><strong>기술 : Java, Spring, MySql, AWS EC2</strong></p><p id="d8f6135f-5011-4459-8592-19c456e1c88c" class=""><div class="indented"><ul id="9d509dc3-aa85-4348-8b4d-794a21935a92" class="bulleted-list"><li style="list-style-type:disc">WebConfiguration을 통한 CORS 허용 설정</li></ul><ul id="f2958ac7-301b-49d0-8969-b68661e284d8" class="bulleted-list"><li style="list-style-type:disc">대댓글 CRUD를 통해 자기 참조 개념을 이해</li></ul><ul id="710b3181-0dcb-4a7d-9afe-51670025c9f4" class="bulleted-list"><li style="list-style-type:disc">JPA N+1 문제를 @Query의 fetch join을 
+사용하여 해결<ul id="82e1c985-6565-4813-818f-040165c75fea" class="bulleted-list"><li style="list-style-type:circle">GET 모든 게시물 조회 API에서 
+<strong>45번의 쿼리를 1번</strong>으로 줄임.</li></ul></li></ul></div></p></div></div><hr id="8ae4b25a-1bed-458a-9e48-5bf47da5d7a7"/><p id="d942daf8-e3c6-4258-8b20-f785d2c5a177" class="">
+</p><p id="797b0d6c-32f1-4633-8170-2d61a647c8f7" class="">
+</p><h2 id="1ac18d86-c4b4-4632-afef-571625d75359" class=""><strong>학력 </strong></h2><hr id="06ad928d-4986-4bc7-92ad-61f72b80559d"/><div id="b2402d56-cbce-4824-b15c-f368c3330cdc" class="column-list"><div id="29f3e029-193f-472a-a970-e108b3554a6f" style="width:56.25%" class="column"><p id="2561463b-21c8-4245-a35b-6df06fe2ebce" class=""><strong>16.03 - 22.08 </strong></p><p id="7ccd0610-4807-4d75-8be1-d8c14a16a18e" class="">
+</p><p id="762f0ee2-08e3-4c2b-a457-75b911551fe8" class="">
+</p></div><div id="dfb32c82-30b0-4f58-981a-bb3bf78c15d6" style="width:93.74999999999999%" class="column"><p id="68c38de5-7325-48c2-8e76-bf0bc65aa63d" class="">한국 외국어 대학교 ( 용인캠퍼스 )<strong> (</strong>학점 3.10<strong>)</strong></p><p id="73da3822-9215-44d4-8143-9576e8c862dd" class="">언어인지과학과 ( 부전공 통계학과 )  </p><p id="0e4b9af3-347a-459c-a09c-4017473927f9" class="">
+</p></div></div><h2 id="e90f8d8f-2ecb-4ee5-87c2-2cc9bef98ba9" class="">외부 활동</h2><hr id="dc6d63d0-002b-48c0-9b6e-d143e3c5b0b2"/><div id="d06d5b62-e6f3-4d42-b676-92aff0a963e4" class="column-list"><div id="b4bf2c68-1efd-487b-b5a4-52e348a2aaef" style="width:56.25%" class="column"><p id="fe67adbc-55a8-43b0-8a55-a27bd90b49cb" class=""><strong>21.02 - 21.10</strong></p><p id="e0adbe49-eb2a-452b-a7d8-2c7fe3f42e6a" class="">
+</p><p id="1e5a8203-e954-4624-baf1-90769bd1dfa0" class="">
+</p><p id="37437a2a-c7b7-4ea7-80a0-eef497a51bb4" class=""><strong>19.02 - 21.11</strong></p><p id="9feb90f4-e555-4f5b-b85b-5954bb14427c" class="">
+</p></div><div id="1bccd551-2e80-4eae-b196-98f763ff6836" style="width:93.75%" class="column"><p id="4324e064-8e25-4f85-a6ef-b5a2ed3a7bfc" class="">북쉐어 부장<strong> </strong>
+• 10개월간 남양주시 공모 사업 
+ “청년에 책갈피를 꽃다” 진행</p><p id="e18172c8-313e-4f1e-813c-92f20087a5c2" class="">
+</p><p id="71d51b76-3fc3-4ff7-8cbc-d0ec56a5ecfd" class="">남양주시 대학생 기획단 플래너즈
+• 대외홍보부 팀장
+• 청춘캠프 TF 팀장, 학과 설명회 기획 및 진행(19-20)</p></div></div><p id="6f9d519d-42a0-4b21-8af0-e158dc686aa2" class="">
+</p></div></article></body></html>

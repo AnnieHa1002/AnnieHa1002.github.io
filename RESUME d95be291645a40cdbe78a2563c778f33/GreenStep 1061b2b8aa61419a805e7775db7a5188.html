@@ -1,0 +1,764 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>GreenStep</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1061b2b8-aa61-419a-805e-7775db7a5188" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌏</span></div><h1 class="page-title">GreenStep</h1></header><div class="page-body"><p id="b5fce443-b431-440a-971b-c69d8c86b471" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f7b73ede-7eee-4638-a5de-7f98abcea20b"><div style="font-size:1.5em"><span class="icon">🌳</span></div><div style="width:100%">우리가 하는 모든 일이 지구에 영향을 미친다.  
+그래서 우리는 일상생활에서 작지만,일상적인 환경 미션을 통해서, 환경 보호에 이바지하고 큰 변화를 이끌 것이다.</div></figure><p id="aac59e5c-01ce-4249-a57e-4bc8d8aed43f" class="">
+</p><figure id="84301b3f-c9d0-4fc0-8f31-57ae2904998c" class="image"><a href="GreenStep%201061b2b8aa61419a805e7775db7a5188/003.png"><img style="width:864px" src="GreenStep%201061b2b8aa61419a805e7775db7a5188/003.png"/></a></figure><h1 id="d67e8a21-fb52-40a1-9e79-a9c39852c15f" class=""><mark class="highlight-teal">앱.</mark></h1><figure id="2a464b40-793f-4ecc-b856-4291d23f788f"><a href="https://greenstepapp.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Green Step</div><div class="bookmark-description">Web site created using create-react-app</div></div><div class="bookmark-href"><img src="https://greenstepapp.com/images/FaviconLogo/favicon-cutout.ico" class="icon bookmark-icon"/>https://greenstepapp.com/</div></div></a></figure><h1 id="626bc0bd-54a7-4785-9d4e-5daddd2b99b9" class=""><mark class="highlight-teal">깃허브.</mark></h1><p id="7e7eba33-b747-4d20-add4-35b06468a59b" class="">GitHub. <a href="https://github.com/GreenStep99">https://github.com/GreenStep99</a></p><p id="6ddecec8-2fcf-48da-add5-ee0ec1793bf0" class="">[FE] GitHub. <a href="https://github.com/GreenStep99/Frontend">https://github.com/GreenStep99/Frontend</a></p><p id="71598530-546e-42c7-8bdc-e0f11f4b4ced" class="">[BE] GitHub. <a href="https://github.com/GreenStep99/Backend">https://github.com/GreenStep99/Backend</a></p><p id="4a1aaa64-5195-4021-a941-a62c7081e2d2" class="">
+</p><hr id="05e68c2a-ee9f-4655-923f-9b0e71c970a4"/><figure id="7df420cb-f8ba-4c2f-8729-902d5a0f5c1e" class="image"><a href="GreenStep%201061b2b8aa61419a805e7775db7a5188/KakaoTalk_Photo_2022-10-03-16-56-24.png"><img style="width:1920px" src="GreenStep%201061b2b8aa61419a805e7775db7a5188/KakaoTalk_Photo_2022-10-03-16-56-24.png"/></a></figure><p id="43627cec-aa0d-4d01-a371-f8fd70887d06" class="block-color-gray">
+</p><hr id="043bf07c-fcf7-497c-b85d-7607c425da46"/><h1 id="61ef43d0-ab6f-46c8-8e3a-fa997e31a75d" class=""><mark class="highlight-teal">기술적 의사결정.</mark></h1><div id="b7d14379-3ca9-47cb-81ee-78f179ee8818" class="column-list"><div id="ecb72efa-36f8-4e77-b958-6622f97db9f3" style="width:25%" class="column"><p id="2f435542-ee7f-4e61-8a45-c12e950284c1" class=""><strong>SSE</strong></p><p id="2422d147-56d9-4831-b345-f64506f197d2" class="">
+</p></div><div id="a65685f6-cd07-483e-a468-22ee5f339277" style="width:75%" class="column"><ul id="6705575f-1a2a-43ae-8445-dd3d091c043d" class="bulleted-list"><li style="list-style-type:disc">실시간 알람 기능 Web Socket vs SSE <ul id="5cd5e26e-e4d9-44fd-be76-e500a4960808" class="bulleted-list"><li style="list-style-type:circle"><strong>Polling 방식을 사용했을 경우</strong><ul id="2b425e2b-acdf-45c7-b90e-15af1613ad32" class="bulleted-list"><li style="list-style-type:square">방법: DeferredResult 클래스로 비동기 처리해 주며 구현</li></ul><ul id="14acf4a3-9579-41d5-90c1-c72a2523ba44" class="bulleted-list"><li style="list-style-type:square">장점: 소프트웨어 구현이 간편함</li></ul><ul id="59ea64ad-7484-4d84-8474-8b043f360489" class="bulleted-list"><li style="list-style-type:square">단점: 반응 시간이 느리고 리소스를 많이 차지한다</li></ul></li></ul><ul id="ba42b51f-40e7-46f9-bd89-02c28cf8a1cb" class="bulleted-list"><li style="list-style-type:circle"><strong>WebSocket 방식을 사용했을 경우</strong><ul id="dd6af046-71d8-42af-9c39-ed63e91655da" class="bulleted-list"><li style="list-style-type:square">방법: websocket 패키지 설치 및 @EnableWebSocket를 이용하여 구현</li></ul><ul id="e00f1811-f4a4-4442-990e-84da17957c88" class="bulleted-list"><li style="list-style-type:square">장점: 한번의 연결로 서버와 지속적인 연결이 가능해서 polling, Long polling 방식에서 사용되는 불필요한 커넥션 오버헤드(HTTP, TCP 연결 트래픽 등)를 줄일 수 있음</li></ul><ul id="ed4d435b-12c6-4e63-90cb-4bcd9a2fafb4" class="bulleted-list"><li style="list-style-type:square">단점: 서버와 클라이언트 간의 Socket 연결을 유지하는 것 자체에 비용이 발생.</li></ul></li></ul><ul id="d0c9e6fe-9371-4c8e-8034-fa9d619839cf" class="bulleted-list"><li style="list-style-type:circle"><strong>Server Sent Event 방식을 사용했을 경우</strong><ul id="c20a05ab-e399-43a7-b27b-bc3f1d0650a4" class="bulleted-list"><li style="list-style-type:square">방법: SseEmitter 클래스를 이용하여 구현</li></ul><ul id="1bbbb620-22a1-4583-b1d0-f6fb6a01cf46" class="bulleted-list"><li style="list-style-type:square">장점: 웹 소켓의 역할을 어느 정도 대체 가능하면서 더 가볍다.</li></ul><ul id="b98c3860-1d2c-45d9-b94a-c334cc09fec2" class="bulleted-list"><li style="list-style-type:square">단점: 양방향 통신이 아닌 서버에서 클라이언트로만 신호를 보내 줄 수 있다.</li></ul></li></ul></li></ul><ul id="01f6d683-1375-4cea-8801-d68e5d6c25ca" class="bulleted-list"><li style="list-style-type:disc">서버에서 클라이언트로 신호를 보내주는 실시간 알림 기능을 구현하는 것이 목적이었기에 양방향 통신인 Web Socket 보단 단방향 통신인 SSE가 목적성으로나 트래픽 부하 등의 이유로 더 적합하다고 판단하여  SSE으로 결정하게 되었다.</li></ul><p id="003b22cf-0157-4eec-8998-192d6f836d29" class="">
+</p></div></div><div id="bd49abb9-58e2-439c-a0c9-80b49a88cf8f" class="column-list"><div id="75087f80-4ebe-455c-a344-376fe6bf56de" style="width:25%" class="column"><p id="7120484c-5250-45d4-8cab-5f3b495d49f5" class=""><strong>CI/CD 적용</strong></p><p id="575ac248-f2da-4dd5-81c6-94891fb84fb5" class="">
+</p><p id="ed97b008-68fe-4d5f-8e22-463b9b98bc4c" class="">
+</p><p id="a6b6d72c-a511-45b3-9118-0fd21a05a230" class="">
+</p><p id="216aaa6f-3dff-4ca7-9447-b2c473a62bda" class="">
+</p><p id="5dfa8115-a6a2-455c-ba19-d56e36bdd07c" class=""><strong>소셜 로그인</strong></p><p id="161c2409-4abc-4d6a-b0bc-f9e802931328" class="">
+</p><p id="cb158943-34cc-4abf-8c1f-4d28b975bbf6" class="">
+</p><p id="7e8044e6-8489-486f-ba51-2b3f4b4dfd1a" class="">
+</p><p id="b43b39af-d9b5-4995-905e-91d0dc7dae0a" class="">      </p></div><div id="ec04d47e-6e40-4971-a42e-8ad9c03d3476" style="width:75%" class="column"><ul id="ce2f22ef-fdad-47b5-986e-74f163fb43c4" class="bulleted-list"><li style="list-style-type:disc">Github Action을 사용하여 배포 브랜치에 PR이 머지되면 자동으로 빌드 되므로 간편하고 빌드 및 테스트가 용이하기에 Github Action을 사용.</li></ul><ul id="b44ec58c-c88f-4439-bd43-ae9edfe3148a" class="bulleted-list"><li style="list-style-type:disc">AWS CloudFront 캐시 서버(CDN)을 사용하여 서버에 저장된 캐시를 무효화(invalidate)시킬 수 있어 CloudFront를 사용.</li></ul><p id="19d16657-df69-4827-b0b1-fcc0cbcd98d7" class="">
+</p><p id="759cd328-890e-4c01-8a8b-97ab38b26004" class="">
+</p><ul id="111531c0-e61f-4d33-babd-85079665c9f3" class="bulleted-list"><li style="list-style-type:disc">유저 입장에서는 평소 사용하던 소셜 계정으로 클릭 한두 번 만으로 회원가입이 가능한 편리함이 가장 큰 장점이 있어 선택했다.</li></ul><ul id="c0697b18-7eb3-41cb-82ee-757740775dc1" class="bulleted-list"><li style="list-style-type:disc">가입 과정에 피로감을 느껴 이탈하는 유저들을 효과적으로 서비스로 유도할 수 있다.</li></ul><p id="e372430f-0938-4bdd-b359-d168b9d58db2" class="">
+</p><p id="d46610ac-5c83-44b0-9cf2-75e49371974c" class="">
+</p></div></div><hr id="3207a3f9-c14e-44b0-b4c3-c838f19ff5e2"/><h1 id="05454c32-02e3-417e-9c63-593da58d6260" class=""><mark class="highlight-teal"><strong>트러블슈팅.</strong></mark></h1><h2 id="23b561eb-ad55-4805-b401-c9cc0c8de673" class="">1. 이미지 리사이징 기능 구현 30-60% 이미지 크기 감축</h2><ul id="84f333fc-3b49-4af4-9d49-76b890a0d449" class="bulleted-list"><li style="list-style-type:disc"><strong>문제상황:  </strong>이미지 크기로 인한 S3버킷 부하를 줄이기 위해 이미지 리사이징 기능 결정 </li></ul><p id="c02d21ae-a528-41da-901a-64f48c086618" class="">
+</p><ul id="291e281c-4939-47b2-a0f2-c99b5d6f8c30" class="bulleted-list"><li style="list-style-type:disc"><strong>시도한 방법:</strong><ol type="1" id="64880ce9-c46f-4bc2-b568-6ab0aa56ab70" class="numbered-list" start="1"><li>받은 Base64를 InputStream으로 변환하여 ImageIO.read를 통해 받은 이미지의 길이와 넓이를 확인 후 가로세로 최솟값이 320이 되도록 리사이징 함. </li></ol><ol type="1" id="d244a19e-dcac-4228-bb3b-8fc80f6b96b0" class="numbered-list" start="2"><li>InputStream은 BufferedImage로 변환 시 null이 뜨는 오류 수정<ul id="a65a76ef-9790-48ee-9aa8-eea2f2b37c46" class="bulleted-list"><li style="list-style-type:disc">시도한 로직에서 InputStream이 ImageIO의 read 함수를 거치고 나면  InputStream이 null이 뜨며 BufferedImage로의 변환이 실패하는데 이는 Image.IO에 대한 이해도 부족으로 인한 오류였다. BufferedImage를 받아와 <a href="http://ImageIO.read">ImageIO.read</a> 함수를 사용하지 않고 저장으로 넘겨 정상 저장 완료하였다.</li></ul><p id="6c7e5aa0-4cf5-402c-9d84-194bda0d696d" class="">
+</p></li></ol></li></ul><ul id="027ed69a-465f-41e4-b49b-ae1fd02b9988" class="bulleted-list"><li style="list-style-type:disc"><strong>해결한 방법:</strong><ul id="93ef548e-8ebc-49a4-acd9-93f79df496b9" class="bulleted-list"><li style="list-style-type:circle">결론:  버킷에 저장되는 이미지는<strong> 최대 280KB</strong>까지, 저장되며 이는 원본에 비하여 약 <strong>30-60%의 이미지 크기 감축</strong>을 하였다.  이후 추가적인 렌더링의 성능 개선과 버킷 리소스 부하를 줄이기 위해서 CDN을 사용하여 서버 부하를 줄였다. </li></ul><ul id="8999c551-33cb-4dbd-a9eb-c00334c392a8" class="toggle"><li><details open=""><summary>해결한 코드</summary><pre id="57e41267-391e-496a-9d70-f50098978e43" class="code code-wrap"><code>public String getImgUrlBase64(String base64) throws IOException {
+        String[] strings = base64.split(&quot;,&quot;);
+        String extension = switch (strings[0]) { 
+            case &quot;data:image/jpeg;base64&quot; -&gt; &quot;.jpeg&quot;;
+            case &quot;data:image/png;base64&quot; -&gt; &quot;.png&quot;;
+            case &quot;data:image/webp;base64&quot; -&gt; &quot;.webp&quot;;
+            default -&gt; &quot;.jpg&quot;;
+        };
+        byte[] data = DatatypeConverter.parseBase64Binary(strings[1]);
+
+        InputStream imgStream = new ByteArrayInputStream(data);
+        InputStream resizedImg = checkImage(imgStream);
+
+        ObjectMetadata metadata = new ObjectMetadata();
+        metadata.setContentLength(resizedImg.available());
+        metadata.setContentType(&quot;image/&quot; + extension.substring(1));
+        metadata.setCacheControl(&quot;public, max-age=31536000&quot;);
+
+        long now = new Date().getTime();
+        String fileName = now + &quot;_&quot; + UUID.randomUUID() + extension;
+        amazonS3Client.putObject(new PutObjectRequest(bucket, fileName, resizedImg, metadata)
+                .withCannedAcl(CannedAccessControlList.PublicRead));
+        return amazonS3Client.getUrl(bucket, fileName).toString();
+    }
+
+    public InputStream checkImage(InputStream imgStream) throws IOException {
+        BufferedImage inputImage = ImageIO.read(imgStream);
+        int imageHeight = inputImage.getHeight(null);
+        int imageWidth = inputImage.getWidth(null);
+        if (imageHeight &gt; 320 &amp;&amp; imageWidth &gt; 320) return resize(inputImage, imageWidth, imageHeight);
+        else {
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            ImageIO.write(inputImage,&quot;png&quot;,outStream);
+            return new ByteArrayInputStream(outStream.toByteArray());
+        }
+    }
+    /* 리사이즈 실행 메소드 */
+    public InputStream resize(BufferedImage inputImage, int width, int height) throws IOException {
+
+        ImageSizeDto sizeDto = defineSize(height, width);
+        Image resizedImage = inputImage.getScaledInstance(sizeDto.getWidth(),sizeDto.getHeight(),Image.SCALE_SMOOTH);
+
+        BufferedImage outputImage = new BufferedImage(sizeDto.getWidth(), sizeDto.getHeight(), inputImage.getType());
+
+        Graphics graphics2D = outputImage.getGraphics();
+        graphics2D.drawImage(resizedImage, 0, 0, null); // 그리기
+        graphics2D.dispose(); // 자원해제
+
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        ImageIO.write(outputImage, &quot;png&quot;, os);
+        return new ByteArrayInputStream(os.toByteArray());
+    }
+
+    public ImageSizeDto defineSize(int height, int width) {
+        if (height &gt; width) {
+            double ratio = (double)width / 320;
+            int resizedHeight = (int) (height / ratio);
+            return (new ImageSizeDto(resizedHeight, 320));
+        }
+        int ratio = height / 320;
+        int resizedWidth = width / ratio;
+        return (new ImageSizeDto(320, resizedWidth));
+    }</code></pre></details></li></ul></li></ul><p id="34498ab0-d268-48ee-a9a0-ade0c06e2320" class="">
+</p><h2 id="e5780c19-7c11-462b-9b14-bc096a9f4edd" class="">2.  N+1 문제 처리, 스레드 요청 처리 시간 45초 단축</h2><ul id="565d08d3-7bee-4ffe-a8b2-b98e43de457b" class="bulleted-list"><li style="list-style-type:disc"><strong>문제상황 : </strong>@GetMapping(&quot;admin/verification&quot;) api와 @GetMapping(&quot;profiles/feed&quot;) api에서 참조로 인한 n+1 문제 발생. 이로 인한 api 처리 속도 지연 이슈 발생</li></ul><p id="58799d25-5be2-4c93-ad9e-d3c0d1b71051" class="">
+</p><ul id="afa93089-6349-4b63-80fb-04f73f2b19b3" class="bulleted-list"><li style="list-style-type:disc"><strong>해결한 방법 :</strong> <strong>Fetch Join 방식</strong>을 이용하여 n+1 문제 해결<ul id="1c859a41-107d-4896-8040-75ee42d12dcb" class="toggle"><li><details open=""><summary>사용한 코드</summary><pre id="b811ee3d-5175-4291-b540-e77cb5fddcae" class="code"><code>@Query(&quot;select s from SubmitMission s join fetch s.member order by s.createdAt asc&quot;)
+    List&lt;SubmitMission&gt; findAllByOrderByCreatedAtAscFetchJoin();
+
+@Query(&quot;select f from Feed f join fetch f.member where f.member = :member and f.onHide = :onHide order by f.createdAt desc &quot;)
+    List&lt;Feed&gt; findAllByMemberFetchJoin(@Param(&quot;member&quot;) Member member, @Param(&quot;onHide&quot;) Boolean onHide);</code></pre></details></li></ul><p id="b233abe7-a92e-423f-ac8b-34d45161ee51" class="">
+</p></li></ul><ul id="b7f36312-e841-4b2d-b7ff-1a860f9e509e" class="bulleted-list"><li style="list-style-type:disc">@GetMapping(&quot;admin/verification&quot;) Fetch Join 적용 후<p id="0be25996-9d8d-4d45-af23-b6ed23d37576" class="">초당 데이터의 처리 양과 수신받는 데이터의 양, 전송되는 데이터의 양이 기존보다 168% 증가하였다.</p><p id="a4f73dfa-ea6f-4aac-b04f-1c210793bfaf" class="">1,000개의 스레드의 요청을 처리해 주기까지 소모되는 시간이 기존 70초에서 26초까지 <strong>44초 단축</strong>되었다.</p></li></ul><p id="34974848-34f2-4342-8707-2a85b6fda182" class="">
+</p><ul id="6946d08c-e65f-434b-a2e4-fd7bb02afb1f" class="bulleted-list"><li style="list-style-type:disc">@GetMapping(&quot;profiles/feed&quot;) Fetch Join 적용 후<p id="7540e4ac-1b69-448c-b4e6-ff73e1939e99" class="">초당 데이터의 처리양과 수신받는 데이터의 양, 전송되는 데이터의 양이 기존보다 <strong>17% 증가</strong>하였다.</p><p id="3e45fee8-0c5f-4630-a8d9-3b72bc1fcb71" class="">1,000개의 스레드의 요청을 처리해 주기까지 소모되는 시간이 기존 10초에서 9초까지 <strong>1초 단축</strong>되었다.</p><p id="45861385-7684-43e4-a85c-9b59b00882ee" class="">
+</p></li></ul><h2 id="f048a3f4-2236-42f6-a348-2c25dc7c86a6" class="">3.  Histroy Table 생성 </h2><ul id="7173352a-7ede-4e1e-adbe-de42d875ce74" class="bulleted-list"><li style="list-style-type:disc"><strong>문제상황 : </strong><p id="69644e86-e1db-414b-8461-9dad6dd35ea8" class="">관리자의 입장에서 유저의 정보들이 누락되는 경우 민원 처리나 클레임을 대처할 때, 어려움이 있을 수 있다. 그러한 점을 고려하여 미션 인증 내역을 따로 저장하는 기능을 구현했다. 그 과정에서 고려한 기능은 <strong>일반 테이블에 JPA로 자동 기록하게 하는 형식</strong>과 <strong>envers 라이브러리</strong>를 통한 내역 테이블 자동생성 두 기능을 비교하였다.</p></li></ul><p id="fd0fca0c-ba69-4c77-91d3-2fb8145f4bb8" class="">
+</p><ul id="3900156b-762a-4e35-892a-be81a9b69ea1" class="bulleted-list"><li style="list-style-type:disc"><strong>시도한 방법 :</strong><ul id="16b6ae06-f045-4bc7-9bfb-b783c8332854" class="bulleted-list"><li style="list-style-type:circle"><strong>일반 테이블에 JPA로 자동 기록하게 하는 형식</strong><ul id="ad86356c-f158-4eb3-89be-2a84399040ff" class="bulleted-list"><li style="list-style-type:square">방법: JPA @PrePersist 와 @PreUpdate를 통하여 테이블 자동 생성</li></ul><ul id="88fe2f9d-ff97-47a6-8da9-226ddb254619" class="bulleted-list"><li style="list-style-type:square">장점: 원하는 정보만을 선별하여 꼭 필요할 때에만 내역을 저장할 수 있다.</li></ul><ul id="fa8ff8ad-b60f-4a7c-9aef-edb077be76d1" class="bulleted-list"><li style="list-style-type:square">단점: 자바class가 여러 개가 생성되며 단순 내역 기록에 사용되기에는 코드의 양이 많은 편이다.</li></ul></li></ul><ul id="3d29afb7-29a9-40f0-ba4e-7f0819d1b419" class="bulleted-list"><li style="list-style-type:circle"><strong>envers 라이브러리</strong><ul id="0dd6a189-f989-435f-a60b-a370e7c1bbac" class="bulleted-list"><li style="list-style-type:square">방법: envers를 사용하여 @Audited와 @NotAudited로 테이블 내 정보를 선별하여 Rev파일 자동 생성</li></ul><ul id="87e0d52b-2148-4bbd-ac18-8967c8fba596" class="bulleted-list"><li style="list-style-type:square">장점: 이미 생성되어 있는 테이블에 어노테이션 @Audited로 테이블에 변경사항이 생길 때 자동으로 내역 테이블을 별도의 클래스 없이 생성한다.</li></ul><ul id="c79f8c96-46a3-4470-b427-cdf015ba0b9a" class="bulleted-list"><li style="list-style-type:square">단점: 테이블 내에 있는 정보가 아니면 기록되지 않는다.</li></ul><ul id="44c32f69-c108-4dc9-ae66-e4f43832ed8d" class="bulleted-list"><li style="list-style-type:square"></li></ul></li></ul></li></ul><ul id="63137521-1ca6-4a01-99f5-d41594d8bacf" class="bulleted-list"><li style="list-style-type:disc"><strong>결론 </strong>: 필요한 정보가 submitMission 테이블에 존재하기 때문에 <code>envers 라이브러리</code>를 사용하기로 결정.</li></ul><p id="c8b6e6ff-7c03-4409-9ea7-c12db90c6bb3" class="">
+</p><hr id="0639a770-b41c-4c1e-aa07-c5be24a846d9"/><h1 id="89dc49c2-33b9-4c67-8f48-e1a2e3d6e867" class=""><mark class="highlight-teal">개발자. </mark></h1><table id="2ce7e9bd-b70b-4f74-95d2-e6a56c0f09bd" class="simple-table"><tbody><tr id="e4f6ac80-1946-4840-81c7-0b5c9dd3446d"><td id="b;\[" class="block-color-teal_background" style="width:132px"><strong>팀원</strong></td><td id="D|GM" class="block-color-teal_background" style="width:300px"><strong>블로그 주소</strong></td><td id="DAmX" class="block-color-teal_background" style="width:276px"><strong>깃허브 주소</strong></td></tr><tr id="52b66a42-6092-485c-90cf-b9891ac3b3a4"><td id="b;\[" class="" style="width:132px">김은혜 [L] [FE]</td><td id="D|GM" class="" style="width:300px"><a href="https://blog.naver.com/eunhey2717">https://blog.naver.com/eunhey2717</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/uuuuooii">https://github.com/uuuuooii</a></td></tr><tr id="c79d22e9-0a76-4e21-b4e6-33e10a2e0e89"><td id="b;\[" class="" style="width:132px">김현서 [VL] [BE]</td><td id="D|GM" class="" style="width:300px"><a href="https://velog.io/@hoika">https://velog.io/@hoika</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/khs13526">https://github.com/khs13526</a></td></tr><tr id="df4232bf-51f8-404e-bb7b-c5388821a6ec"><td id="b;\[" class="" style="width:132px">강인호 [FE]</td><td id="D|GM" class="" style="width:300px"><a href="https://velog.io/@nanaheui000">https://velog.io/@nanaheui000</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/duck9-papa">https://github.com/duck9-papa</a></td></tr><tr id="6a698144-60d6-4ac6-8630-7f57396576d4"><td id="b;\[" class="" style="width:132px">우수진 [FE]</td><td id="D|GM" class="" style="width:300px"><a href="https://velog.io/@rita">https://velog.io/@rita</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/ilmare-rita">https://github.com/ilmare-rita</a></td></tr><tr id="a3b4472b-4216-4089-81b1-38882ad37b8e"><td id="b;\[" class="" style="width:132px">하지혜 [BE]</td><td id="D|GM" class="" style="width:300px"><a href="https://medium.com/@annieha1002">https://medium.com/@annieha1002</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/AnnieHa1002">https://github.com/AnnieHa1002</a></td></tr><tr id="1a556b02-84cc-490d-9eae-9b388fe0660d"><td id="b;\[" class="" style="width:132px">심규현 [BE]</td><td id="D|GM" class="" style="width:300px"><a href="https://kyuhyun7974.tistory.com/">수업노트 (tistory.com)</a></td><td id="DAmX" class="" style="width:276px"><a href="https://github.com/kyuhyun-sim/TIL">kyuhyun-sim/TIL: origin (github.com)</a></td></tr></tbody></table><p id="3d656838-5e86-420c-b046-405c04695664" class="">
+</p><p id="d637d5fc-7187-4aa1-a390-f719aebe8a36" class="">
+</p></div></article></body></html>
